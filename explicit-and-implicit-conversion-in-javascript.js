@@ -22,11 +22,22 @@ Use console.log() to clearly show the before-and-after type conversions.
 let result = "5" - 2;
 console.log("The result is: " + result);
 
-let isValid = Boolean("false");
-if (isValid) {
+let isValid = Boolean(""); // "false" is not falsy but "" is.
+if (Boolean(isValid)) {
     console.log("This is valid!");
 }
 
 let age = "25";
-let totalAge = age + 5;
+let totalAge = Number(age) + 5; // This converts age to a number so that 5 can be added to it.
 console.log("Total Age: " + totalAge);
+
+
+//Explicit
+let balance = 10129;
+console.log("User has funds (T/F): " + Boolean(balance));
+
+
+//Implicit
+let ssnBeginning = 12345;
+let ssnLastFour = 6789;
+console.log("SSN: " + ssnBeginning + ssnLastFour);
